@@ -1,0 +1,34 @@
+body, html { font-family: 'Inter', sans-serif; margin:0; padding:0; }
+.logo-img {
+  height: 3rem; /* размер логотипа */
+  object-fit: contain;
+}
+
+.header-top { display:flex; justify-content:space-between; align-items:center; padding:1rem; }
+.logo-area { display:flex; align-items:center; gap:1rem; }
+.site-name { font-weight:600; font-size:1.125rem; }
+.site-desc { font-size:0.875rem; color:#555; }
+.hamburger { display:none; font-size:1.5rem; background:none; border:none; cursor:pointer; }
+.search-input { padding:0.5rem; border:1px solid #ccc; border-radius:4px; }
+.desktop-search { display:block; }
+.mobile-search { display:none; margin:1rem 0; width:100%; }
+.sticky-menu { position:sticky; top:0; background:#fff; transition:transform 0.3s; z-index:40; border-top:1px solid #e5e5e5; }
+.sticky-menu.hide { transform:translateY(-100%); }
+nav ul { display:flex; list-style:none; gap:2rem; padding:0.5rem 0; margin:0; }
+nav ul li { position:relative; cursor:pointer; }
+nav ul li .submenu { position:absolute; top:100%; left:0; background:#fff; border:1px solid #ccc; border-radius:4px; opacity:0; visibility:hidden; transition:opacity 0.2s; }
+nav ul li:hover .submenu { opacity:1; visibility:visible; }
+nav ul li .submenu li { padding:0.5rem 1rem; }
+.posts-grid { display:flex; flex-wrap:wrap; gap:16px; margin-top:3rem; }
+.post-card { background:#fff; border:1px solid #e5e5e5; border-radius:8px; padding:1rem; flex:1 1 calc(33.333% - 16px); display:flex; flex-direction:column; cursor:pointer; }
+.post-card img { width:100%; height:160px; object-fit:cover; border-radius:4px; }
+.post-card h3 { margin-top:0.5rem; font-size:1rem; font-weight:600; }
+.post-card p { font-size:0.875rem; color:#555; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; margin-top:0.5rem; }
+.post-meta { margin-top:auto; display:flex; justify-content:space-between; font-size:0.75rem; color:#888; }
+.modal { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:60; }
+.modal .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.modal .content { position:relative; background:#fff; border-radius:8px; max-width:768px; width:100%; padding:1.5rem; z-index:10; }
+.modal .content img { width:100%; height:240px; object-fit:cover; border-radius:4px; margin-top:1rem; }
+.modal .content button { margin-left:auto; padding:0.25rem 0.5rem; border:1px solid #ccc; border-radius:4px; cursor:pointer; }
+@media (max-width:1024px) { .post-card { flex:1 1 calc(50% - 16px); max-width:calc(50% - 16px); } .hamburger { display:block; } .desktop-search { display:none; } .mobile-search { display:block; } }
+@media (max-width:640px) { .post-card { flex:1 1 100%; max-width:100%; } }
